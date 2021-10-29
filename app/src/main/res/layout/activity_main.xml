@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/layout">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cyan_dark"
+            app:menu="@menu/top_app_bar"
+            app:title="Pinjaman Akakom" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="677dp"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_marginTop="-2dp"
+        android:background="#FFFFFF"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/topCardBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintStart_toStartOf="@id/bottomCard"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cyan"
+                    android:backgroundTint="@color/cyan_dark"
+                    android:padding="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/jumlah_hutang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/jumlah_utang"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteX="32dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/jumlah_hutang_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/estimasi_question"
+                        style="@style/Widget.NganJoekDoloe.TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Jangka Waktu Pinjaman"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toStartOf="@id/jumlah_hutang"
+                        app:layout_constraintTop_toBottomOf="@id/jumlah_hutang" />
+
+                    <RadioGroup
+                        android:id="@+id/hutang_options"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkedButton="@id/option_harian"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="@id/estimasi_question"
+                        app:layout_constraintTop_toBottomOf="@id/estimasi_question">
+
+
+                        <RadioButton
+                            android:id="@+id/option_harian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/harian_service"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/option_mingguan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mingguan"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/option_bulanan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bulanan_service"
+                            android:textColor="#FFFFFF">
+
+
+                        </RadioButton>
+
+                    </RadioGroup>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/jumlah_hari_hutang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Lama Waktu"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="2"
+                        app:layout_constraintStart_toStartOf="@id/hutang_options"
+                        app:layout_constraintTop_toBottomOf="@id/hutang_options"
+                        tools:layout_editor_absoluteX="32dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/jumlah_hari_hutang_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:id="@+id/ajukan_hutang"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:text="@string/ajukan_calculate"
+                        android:textColor="#212121"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/jumlah_hari_hutang"
+                        app:layout_constraintTop_toBottomOf="@id/jumlah_hari_hutang" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bottomCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="@id/topCardBar"
+                app:layout_constraintStart_toStartOf="@id/topCardBar"
+                app:layout_constraintTop_toBottomOf="@id/topCardBar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Media -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title, secondary and supporting text -->
+                        <TextView
+                            android:id="@+id/hutang_result"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            tools:text="$100" />
+
+                        <TextView
+                            android:id="@+id/hari_result"
+                            style="@style/Widget.NganJoekDoloe.TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="Jumlah Hari: 2 Bulan" />
+
+                        <TextView
+                            android:id="@+id/bunga_result"
+                            style="@style/Widget.NganJoekDoloe.TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary"
+                            app:layout_constraintTop_toBottomOf="@id/hari_result"
+                            tools:text="Jumlah Bunga: 2000" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

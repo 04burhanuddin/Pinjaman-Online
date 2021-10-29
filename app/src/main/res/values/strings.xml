@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pinjaman Online</string>
+    <string name="jumlah_utang">Jumlah Pinjaman</string>
+    <string name="jumlah_hari_utang">Jumlah Pelunasan Pinjaman</string>
+    <string name="estimasi_hutang">Estimasi pelunasan pinjaman?</string>
+    <string name="harian_service">Harian</string>
+    <string name="bulanan_service">Bulanan</string>
+    <string name="ajukan_calculate">Ajukan Pinjaman</string>
+    <string name="title">Pinjaman berhasil !!</string>
+    <string name="content_description_media">Gambar Hutang</string>
+    <string name="jumlah_hutang">%s</string>
+    <string name="jumlah_hari">Jumlah Hari: %s %s</string>
+    <string name="jumlah_bunga">Jumlah Bunga: %s</string>
+    <string name="textview">TextView</string>
+    <string name="favorite">Favorite</string>
+    <string name="search">Seacrh</string>
+    <string name="more">More</string>
+</resources>
